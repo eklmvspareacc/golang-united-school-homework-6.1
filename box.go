@@ -90,7 +90,7 @@ func (b *box) RemoveAllCircles() error {
 	result := make([]Shape, 0, b.shapesCapacity)
 	foundCircle := false
 	for _, shape := range b.shapes {
-		_, ok := shape.(Circle)
+		_, ok := shape.(*Circle)
 		if ok {
 			foundCircle = true
 			continue
